@@ -15,13 +15,13 @@ class HomeFooter extends StatelessWidget {
         children: [
           Text(
             'MSI-AMS',
-            style: kTitleText,
+            style: kTitleText.copyWith(fontSize: kBodyRegular),
           ),
           verticalSpaceSmall,
           RichText(
             text: TextSpan(
                 text: 'Made By: ',
-                style: kTitleText.copyWith(fontSize: kHeadingThree),
+                style: kTitleText.copyWith(fontSize: kBodySmall),
                 children: [
                   TextSpan(
                       text: 'Software Development Cell',
@@ -38,7 +38,7 @@ class HomeFooter extends StatelessWidget {
           Text(
             '© 2024 SDC, Inc. All rights reserved',
             style: kRobotoText.copyWith(
-                fontWeight: kFwMedium, color: kColorGrey, fontSize: kBodySmall),
+                fontWeight: kFwMedium, color: kColorGrey, fontSize: kCaption),
           ),
         ],
       ),

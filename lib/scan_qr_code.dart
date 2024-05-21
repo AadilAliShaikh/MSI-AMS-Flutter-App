@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_starter_kit/constants.dart';
 import 'package:flutter_starter_kit/home/components/home_header.dart';
 import 'package:flutter_starter_kit/home/components/home_body.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -52,7 +53,7 @@ class _ScanQRCodeState extends State<ScanQRCode> {
       final res = jsonDecode(qr.body);
 
       qrResult = res['message'];
-
+      showToast();
       if (!mounted) return;
       setState(() {
         //this.qrResult = qrCode.toString();
@@ -67,7 +68,7 @@ class _ScanQRCodeState extends State<ScanQRCode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('QR Code Scanner'),
+        title: const Text('MSI-AMS'),
       ),
       body: Center(
         child: Column(
@@ -76,9 +77,35 @@ class _ScanQRCodeState extends State<ScanQRCode> {
             const SizedBox(
               height: 30,
             ),
+            SizedBox(
+              width: 100.0,
+              height: 100.0,
+              child: ClipOval(
+                child: Image.network(
+                  '${pfp?.picture}',
+                  width: 100.0,
+                  height: 100.0,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            verticalSpaceRegular,
             Text(
-              qrResult,
+              '${pfp?.givenName} ${pfp?.familyName} ',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: kHeadingTwo),
+            ),
+            verticalSpaceSmall,
+            Text(
+              'Email : ${pfp?.email}  ',
               style: const TextStyle(color: Colors.black),
+            ),
+            verticalSpaceLarge,
+            const Text(
+              'Click on mark attendance to scan QR',
+              style: TextStyle(color: Colors.black),
             ),
             const SizedBox(
               height: 30,
