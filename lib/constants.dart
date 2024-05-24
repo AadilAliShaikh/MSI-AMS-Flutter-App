@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const helpUrl = "https://github.com/sdc-msi/";
-const docsUrl = "https://kinde.com/docs/developer-tools/flutter-sdk/";
+const docsUrl = "https://www.instagram.com/sdc_msi";
 const appTitle = "MSI-AMS";
 
 /// Text Styles
